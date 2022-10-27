@@ -9430,6 +9430,7 @@ exports.GearImageName = 'icon_gear.png';
 exports.PowerImageName = 'CloseNormal.png';
 exports.ModelDir = [
     'www2',
+    'miku_sample_t04',
     'Haru',
     'Hiyori',
     'Mark',
