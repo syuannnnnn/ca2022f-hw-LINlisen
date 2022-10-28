@@ -177,7 +177,7 @@
 
       let backgroundFileEL = document.querySelector("#backgroundFile");
       backgroundFileEL.addEventListener("change", (e) => {
-        let file = e.target.files;
+        let files = e.target.files;
 
         if(files[0]){
           let imagesPath = URL.createObjectURL(files[0]);
