@@ -1813,11 +1813,22 @@ var CubismMatrix44 = (function () {
             dst[i] = c[i];
         }
     };
+    /*調整位置大小*/
     CubismMatrix44.prototype.loadIdentity = function () {
+        /*www2*/
+        // var c = new Float32Array([
+        //     1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.3, -0.5, 0.0,
+        //     1.0,
+        // ]);
+        /*miku*/
         var c = new Float32Array([
-            1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0,
+            1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, -0.5, 0.0,
             1.0,
         ]);
+        // var c = new Float32Array([
+        //     1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0,
+        //     1.0,
+        // ]);
         this.setMatrix(c);
     };
     CubismMatrix44.prototype.setMatrix = function (tr) {
@@ -1905,8 +1916,10 @@ var CubismMatrix44 = (function () {
         CubismMatrix44.multiply(tr1, this._tr, this._tr);
     };
     CubismMatrix44.prototype.scale = function (x, y) {
-        this._tr[0] = x;
-        this._tr[5] = y;
+        this._tr[0] = x*1.5;
+        this._tr[5] = y*1.5;
+        // this._tr[0] = x;
+        // this._tr[5] = y;
     };
     CubismMatrix44.prototype.multiplyByMatrix = function (m) {
         CubismMatrix44.multiply(m.getArray(), this._tr, this._tr);
@@ -9431,8 +9444,10 @@ exports.PowerImageName = 'CloseNormal.png';
 exports.ModelDir = [
     'miku_sample_t04',
     'www2',
+    'miku_sample_t04',
     'Haru',
     'Hiyori',
+    'www2',
     'Mark',
     'Natori',
     'Rice',
@@ -11101,24 +11116,25 @@ var LAppView = (function () {
         var textureManager = lappdelegate_1.LAppDelegate.getInstance().getTextureManager();
         var resourcesPath = LAppDefine.ResourcesPath;
         var imageName = '';
+        /*關閉背景*/
         imageName = LAppDefine.BackImageName;
         var initBackGroundTexture = function (textureInfo) {
             var x = width * 0.5;
             var y = height * 0.5;
-            var fwidth = textureInfo.width * 2.0;
-            var fheight = height * 0.95;
+            var fwidth = textureInfo.width * 3;
+            var fheight = height;
             _this._back = new lappsprite_1.LAppSprite(x, y, fwidth, fheight, textureInfo.id);
         };
         textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initBackGroundTexture);
-        imageName = LAppDefine.GearImageName;
-        var initGearTexture = function (textureInfo) {
-            var x = width - textureInfo.width * 0.5;
-            var y = height - textureInfo.height * 0.5;
-            var fwidth = textureInfo.width;
-            var fheight = textureInfo.height;
-            _this._gear = new lappsprite_1.LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-        };
-        textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initGearTexture);
+        // imageName = LAppDefine.GearImageName;
+        // var initGearTexture = function (textureInfo) {
+        //     var x = width - textureInfo.width * 0.5;
+        //     var y = height - textureInfo.height * 0.5;
+        //     var fwidth = textureInfo.width;
+        //     var fheight = textureInfo.height;
+        //     _this._gear = new lappsprite_1.LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+        // };
+        // textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initGearTexture);
         if (this._programId == null) {
             this._programId = lappdelegate_1.LAppDelegate.getInstance().createShader();
         }

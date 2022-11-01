@@ -97437,14 +97437,16 @@ class Camera {
         view.eyeROpen = 1;
       }
       /*嘴巴控制*/
-      console.log(faces[0].keypoints[13].y)
-      console.log(faces[0].keypoints[14].y)
       if((faces[0].keypoints[14].y)-(faces[0].keypoints[13].y) > 3){
         view.mouthOpenY = 1; 
       }
       else{
         view.mouthOpenY = 0; 
       }
+
+      /*眼球控制*/
+      // console.log((faces[0].keypoints[263].y)-(faces[0].keypoints[359].y))
+      // view.ParamEyeBallY = ((faces[0].keypoints[263].y)-(faces[0].keypoints[359].y))
     });
   }
 }
