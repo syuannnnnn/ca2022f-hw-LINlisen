@@ -1011,7 +1011,6 @@
         ParamBustY: 'ParamBustY',
         ParamBaseX: 'ParamBaseX',
         ParamBaseY: 'ParamBaseY',
-        ParamNONE: 'NONE:',
         ParamTere: 'ParamTere',
         ParamFaceForm: 'ParamFaceForm',
         ParamEyeForm: 'ParamEyeForm',
