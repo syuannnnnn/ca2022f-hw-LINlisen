@@ -18,6 +18,70 @@
       left: 460px;
       background: rgba(0,0,0,0.3);
     }
+    .StandardTitle{
+      position: absolute;
+      top:2vh;
+      left: 60vw;
+    }
+    .std-box{
+      position: absolute;
+      border: 2px black solid;
+      width: 25vw;
+      height: 10vh;
+      top:8vh;
+      left: 60vw;
+    }
+    .StandardName{
+      position: absolute;
+
+    }
+    .StandardSlider{
+      position: absolute;
+      top:6vh;
+
+    }
+    #stdSelect{
+      position: absolute;
+      top:20vh;
+      left: 60vw;
+    }
+    .StandardTitle{
+      position: absolute;
+      top:2vh;
+      left: 60vw;
+    }
+    .spe-box{
+      position: absolute;
+      border: 2px black solid;
+      width: 25vw;
+      height: 10vh;
+      top:48vh;
+      left: 60vw;
+    }
+    .SpecialName{
+      position: absolute;
+
+    }
+    .SpecialSlider{
+      position: absolute;
+      top:6vh;
+
+    }
+    #speSelect{
+      position: absolute;
+      top:60vh;
+      left: 60vw;
+    }
+    .SpecialTitle{
+      position: absolute;
+      top:42vh;
+      left: 60vw;
+    }
+    .upload{
+      position: absolute;
+      top:75vh;
+      left: 60vw;
+    }
 </style>
   </style>
   <!-- Pollyfill script -->
@@ -80,7 +144,40 @@
       </div>
     </div>
   </div>
+  <div class="std">
+    <h3 class="StandardTitle">標準參數</h3>
+    <div class="std-box">
+      <h4 class="StandardName">參數名稱</h4>
+      <div class="StandardSlider">
+        <label for="stdMin">最小值：</label><input id="stdMin" size="3" value="-1">
+        <input id="stdSlider" type="range" step="0.1" min="-1" max="1" value="0">
+        <label for="stdMax">最大值：</label><input id="stdMax" size="3" value="1">
+      </div>
+    </div>
+    <select id="stdSelect">
+      <option value="0">---請選擇---</option>
+    </select>
+  </div>
+  <div class="spe">
+    <h3 class="SpecialTitle">標準參數</h3>
+    <div class="spe-box">
+      <h4 class="SpecialName">參數名稱</h4>
+      <div class="SpecialSlider">
+        <label for="speMin">最小值：</label><input id="speMin" size="3" value="0">
+        <input id="speSlider" type="range" step="0.1" min="-1" max="1" value="0">
+        <label for="speMax">最大值：</label><input id="speMax" size="3" value="1">
+      </div>
+    </div>
+    <select id="speSelect">
+      <option value="0">---請選擇---</option>
+    </select>
+  </div>
+  <div class="upload">
+    <label for="import-file">Upload the testfile:</label>
+    <input type="file" name="import-file" id="import-file" accept="application/json" onchange="importFile()" required >
+  </div>
 </body>
 </html>
 <script src="./main.js"></script>
+
 
