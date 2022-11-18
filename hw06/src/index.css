@@ -1,0 +1,64 @@
+html{
+    height:100%;
+}
+body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+canvas.live2D{
+    position: absolute;
+    top: 200;
+    left: 200;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+.canvas-container{
+    position: absolute;
+    width: 600px;
+    height: 1000px;
+    display:flex;
+    margin-left: 35vw;
+    margin-top: -10vh;
+}
+
+
+div.character{
+    width: 300px;
+    height: 500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+    position: absolute;
+}
+
+.display-3d{
+    display: none;
+}
+.container{
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 100;
+    z-index: 1;
+}
+
+#camera-source{
+    position: absolute;
+}
+#video-preview{
+    position: absolute;
+}
+.fps-style{
+    position: absolute;
+}
+#canvas-preview{
+    margin-top: 55vh;
+}
+#cropedBigImg{
+    display: flex;
+    position: absolute;
+}
