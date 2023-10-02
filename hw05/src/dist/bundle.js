@@ -9442,7 +9442,7 @@ exports.BackImageName = 'back_class_normal.png';
 exports.GearImageName = 'icon_gear.png';
 exports.PowerImageName = 'CloseNormal.png';
 exports.ModelDir = [
-    'miku_sample_t04',
+    'Hiyori',
     'www2',
     'miku_sample_t04',
     'Haru',
