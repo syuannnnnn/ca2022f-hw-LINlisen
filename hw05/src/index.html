@@ -22,26 +22,32 @@ limitations under the License.
     <!-- Build script -->
     <script src = "./dist/bundle.js"></script>
   <style>
-    body {
-      margin: 0;
-      display: flex;
-      position: relative;
-      background-color:  rgba(0,1,0,1);
-    }
+      html,
+      body {
+        margin: 0;
+        position: absolute;
+        overflow: hidden;
+        background-repeat: repeat;
+        background-position: center;
+        background-color: white;
+      }
 
     #stats {
-      position: relative;
+      position: absolute;
       width: 100%;
       height: 80px;
+      z-index: 1;
     }
 
     #main {
-      position: relative;
+      position: absolute;
       margin: 0;
+      z-index: 1;
     }
 
     #canvas-wrapper {
-      position: relative;
+      position: absolute;
+      left: 10vw;
     }
     </style>
     <style>
@@ -50,30 +56,19 @@ limitations under the License.
       color:aqua;
       padding-left: 0.5vw;
     }
-    .Sliders{
-      display: flex;
-      position: absolute !important;
-      top: 30px;
-      left: 25vw;
-      background-color:  rgba(0,1,0,1);
-    }
-    #stats {
-      position: absolute;
-      width: 100%;
-      height: 80px;
-    }
-
-    #main {
-      position: absolute;
-      margin: 0;
-    }
     #output{
       position: absolute;
-      top: 50vh;
+      top: 55vh;
       left: 3vw;
       width: 400px;
       height: 300px;
     }
+    #character {
+        display: absolute;
+
+        margin-top: 0%;
+        margin-left: 25%;
+      }
     </style>
 </head>
 
@@ -92,10 +87,36 @@ limitations under the License.
           ">
         </video>
       </div>
+
     </div>
   </div>
+  <div id="character"></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
 <script src="./src.a2b27638.js"></script>
+<script>
+  var imgIndex = 1;
+
+  document.body.style.backgroundImage = `url(./images/${imgIndex}.jpg)`;
+
+  document.addEventListener("keydown", function(event) {
+  if (event.keyCode === 40) {
+    imgIndex+=1;
+    if(imgIndex == 8) {
+      imgIndex = 1;
+    }
+    document.body.style.backgroundImage = `url(./images/${imgIndex}.jpg)`;
+  }
+
+  if (event.keyCode === 38) {
+    imgIndex-=1;
+    if(imgIndex == 0) {
+      imgIndex = 7;
+    }
+    document.body.style.backgroundImage = `url(./images/${imgIndex}.jpg)`;
+  }
+});
+
+</script>
 </html>

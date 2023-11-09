@@ -1491,6 +1491,8 @@ var CubismFramework = (function () {
         s_cubismIdManager = new cubismidmanager_1.CubismIdManager();
         s_isInitialized = true;
         (0, cubismdebug_1.CubismLogInfo)('CubismFramework.initialize() is complete.');
+
+        
     };
     CubismFramework.dispose = function () {
         (0, cubismdebug_1.CSM_ASSERT)(s_isStarted);
@@ -9442,9 +9444,9 @@ exports.BackImageName = 'back_class_normal.png';
 exports.GearImageName = 'icon_gear.png';
 exports.PowerImageName = 'CloseNormal.png';
 exports.ModelDir = [
-    'Hiyori',
-    'www2',
     'miku_sample_t04',
+    'Haru',
+    'Hiyori',
     'Haru',
     'Hiyori',
     'www2',
@@ -9552,7 +9554,7 @@ var LAppDelegate = (function () {
                 'This browser does not support the <code>&lt;canvas&gt;</code> element.';
             return false;
         }
-        document.body.appendChild(exports.canvas);
+        document.querySelector("#character").appendChild(exports.canvas);
         if (!exports.frameBuffer) {
             exports.frameBuffer = exports.gl.getParameter(exports.gl.FRAMEBUFFER_BINDING);
         }
@@ -9596,7 +9598,7 @@ var LAppDelegate = (function () {
                 return;
             }
             lapppal_1.LAppPal.updateTime();
-            exports.gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            exports.gl.clearColor(0.0, 0.0, 0.0, 0.0);
             exports.gl.enable(exports.gl.DEPTH_TEST);
             exports.gl.depthFunc(exports.gl.LEQUAL);
             exports.gl.clear(exports.gl.COLOR_BUFFER_BIT | exports.gl.DEPTH_BUFFER_BIT);
@@ -9616,7 +9618,7 @@ var LAppDelegate = (function () {
                 return;
             }
             lapppal_1.LAppPal.updateTime();
-            exports.gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            exports.gl.clearColor(0.0, 0.0, 0.0, 0.0);
             exports.gl.enable(exports.gl.DEPTH_TEST);
             exports.gl.depthFunc(exports.gl.LEQUAL);
             exports.gl.clear(exports.gl.COLOR_BUFFER_BIT | exports.gl.DEPTH_BUFFER_BIT);
@@ -9821,13 +9823,13 @@ var LAppLive2DManager = (function () {
         this.angleX = 0;
         this.angleY = 0;
         this.angleZ = 0;
-        this.eyeLOpen = 0;
-        this.eyeLSmile = 0;
-        this.eyeROpen = 0;
-        this.eyeRSmile = 0;
-        this.eyeBallX = 0;
-        this.eyeBallY = 0;
-        this.eyeBallForm = 0;
+        //this.eyeLOpen = 0;
+        //this.eyeLSmile = 0;
+        //this.eyeROpen = 0;
+        //this.eyeRSmile = 0;
+        //this.eyeBallX = 0;
+        //this.eyeBallY = 0;
+        //this.eyeBallForm = 0;
         this.browLY = 0;
         this.browRY = 0;
         this.browLX = 0;
@@ -9926,12 +9928,12 @@ var LAppLive2DManager = (function () {
             model.angleX = this.angleX;
             model.angleY = this.angleY;
             model.angleZ = this.angleZ;
-            model.eyeLOpen = this.eyeLOpen;
-            model.eyeLSmile = this.eyeLSmile;
-            model.eyeROpen = this.eyeROpen;
-            model.eyeRSmile = this.eyeRSmile;
-            model.eyeBallX = this.eyeBallX;
-            model.eyeBallY = this.eyeBallY;
+            //model.eyeLOpen = this.eyeLOpen;
+            //model.eyeLSmile = this.eyeLSmile;
+            //model.eyeROpen = this.eyeROpen;
+            // model.eyeRSmile = this.eyeRSmile;
+            // model.eyeBallX = this.eyeBallX;
+            // model.eyeBallY = this.eyeBallY;
             model.eyeBallForm = this.eyeBallForm;
             model.browLY = this.browLY;
             model.browRY = this.browRY;
@@ -10104,12 +10106,12 @@ var LAppModel = (function (_super) {
         _this.angleX = 0;
         _this.angleY = 0;
         _this.angleZ = 0;
-        _this.eyeLOpen = 0;
-        _this.eyeLSmile = 0;
-        _this.eyeROpen = 0;
-        _this.eyeRSmile = 0;
-        _this.eyeBallX = 0;
-        _this.eyeBallY = 0;
+       // _this.eyeLOpen = 0;
+        // _this.eyeLSmile = 0;
+       // _this.eyeROpen = 0;
+        // _this.eyeRSmile = 0;
+        // _this.eyeBallX = 0;
+        // _this.eyeBallY = 0;
         _this.eyeBallForm = 0;
         _this.browLY = 0;
         _this.browRY = 0;
@@ -10438,12 +10440,12 @@ var LAppModel = (function (_super) {
         this._model.setParameterValueById(this._idParamAngleX, this.angleX);
         this._model.setParameterValueById(this._idParamAngleY, this.angleY);
         this._model.setParameterValueById(this._idParamAngleZ, this.angleZ);
-        this._model.setParameterValueById(this._idParamEyeLOpen, this.eyeLOpen);
-        this._model.setParameterValueById(this._idParamEyeLSmile, this.eyeLSmile);
-        this._model.setParameterValueById(this._idParamEyeROpen, this.eyeROpen);
-        this._model.setParameterValueById(this._idParamEyeRSmile, this.eyeRSmile);
-        this._model.setParameterValueById(this._idParamEyeBallX, this.eyeBallX);
-        this._model.setParameterValueById(this._idParamEyeBallY, this.eyeBallY);
+       // this._model.setParameterValueById(this._idParamEyeLOpen, this.eyeLOpen);
+       // this._model.setParameterValueById(this._idParamEyeLSmile, this.eyeLSmile);
+        //this._model.setParameterValueById(this._idParamEyeROpen, this.eyeROpen);
+        // this._model.setParameterValueById(this._idParamEyeRSmile, this.eyeRSmile);
+        // this._model.setParameterValueById(this._idParamEyeBallX, this.eyeBallX);
+        // this._model.setParameterValueById(this._idParamEyeBallY, this.eyeBallY);
         this._model.setParameterValueById(this._idParamEyeBallForm, this.eyeBallForm);
         this._model.setParameterValueById(this._idParamBrowLY, this.browLY);
         this._model.setParameterValueById(this._idParamBrowRY, this.browRY);
@@ -10978,13 +10980,13 @@ var LAppView = (function () {
         this.angleX = 0;
         this.angleY = 0;
         this.angleZ = 0;
-        this.eyeLOpen = 0;
-        this.eyeLSmile = 0;
-        this.eyeROpen = 0;
-        this.eyeRSmile = 0;
-        this.eyeBallX = 0;
-        this.eyeBallY = 0;
-        this.eyeBallForm = 0;
+        //this.eyeLOpen = 0;
+        //this.eyeLSmile = 0;
+        //this.eyeROpen = 0;
+        // this.eyeRSmile = 0;
+        // this.eyeBallX = 0;
+        // this.eyeBallY = 0;
+        // this.eyeBallForm = 0;
         this.browLY = 0;
         this.browRY = 0;
         this.browLX = 0;
@@ -11071,13 +11073,13 @@ var LAppView = (function () {
         live2DManager.angleX = this.angleX;
         live2DManager.angleY = this.angleY;
         live2DManager.angleZ = this.angleZ;
-        live2DManager.eyeLOpen = this.eyeLOpen;
-        live2DManager.eyeLSmile = this.eyeLSmile;
-        live2DManager.eyeROpen = this.eyeROpen;
-        live2DManager.eyeRSmile = this.eyeRSmile;
-        live2DManager.eyeBallX = this.eyeBallX;
-        live2DManager.eyeBallY = this.eyeBallY;
-        live2DManager.eyeBallForm = this.eyeBallForm;
+        //live2DManager.eyeLOpen = this.eyeLOpen;
+        //live2DManager.eyeLSmile = this.eyeLSmile;
+        //live2DManager.eyeROpen = this.eyeROpen;
+        // live2DManager.eyeRSmile = this.eyeRSmile;
+        // live2DManager.eyeBallX = this.eyeBallX;
+        // live2DManager.eyeBallY = this.eyeBallY;
+        // live2DManager.eyeBallForm = this.eyeBallForm;
         live2DManager.browLY = this.browLY;
         live2DManager.browRY = this.browRY;
         live2DManager.browLX = this.browLX;
@@ -11109,32 +11111,12 @@ var LAppView = (function () {
         live2DManager.baseX = this.baseX;
         live2DManager.baseY = this.baseY;
     };
+    /*關閉背景*/
     LAppView.prototype.initializeSprite = function () {
-        var _this = this;
         var width = lappdelegate_1.canvas.width;
         var height = lappdelegate_1.canvas.height;
         var textureManager = lappdelegate_1.LAppDelegate.getInstance().getTextureManager();
         var resourcesPath = LAppDefine.ResourcesPath;
-        var imageName = '';
-        /*關閉背景*/
-        imageName = LAppDefine.BackImageName;
-        var initBackGroundTexture = function (textureInfo) {
-            var x = width * 0.5;
-            var y = height * 0.5;
-            var fwidth = textureInfo.width * 3;
-            var fheight = height;
-            _this._back = new lappsprite_1.LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-        };
-        textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initBackGroundTexture);
-        // imageName = LAppDefine.GearImageName;
-        // var initGearTexture = function (textureInfo) {
-        //     var x = width - textureInfo.width * 0.5;
-        //     var y = height - textureInfo.height * 0.5;
-        //     var fwidth = textureInfo.width;
-        //     var fheight = textureInfo.height;
-        //     _this._gear = new lappsprite_1.LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-        // };
-        // textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initGearTexture);
         if (this._programId == null) {
             this._programId = lappdelegate_1.LAppDelegate.getInstance().createShader();
         }

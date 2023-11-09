@@ -97424,18 +97424,20 @@ class Camera {
       view.angleZ = (faces[0].keypoints[226].y-faces[0].keypoints[446].y)/2;
 
       /*眼睛控制*/
-      if((faces[0].keypoints[145].y)-(faces[0].keypoints[159].y) < 2.5){
-        view.eyeLOpen = 0; //右眼閉
-      }
-      else{
-        view.eyeLOpen = 1; //右眼開
-      }
-      if((faces[0].keypoints[374].y)-(faces[0].keypoints[386].y) < 2.5){
-        view.eyeROpen = 0;
-      }
-      else{
-        view.eyeROpen = 1;
-      }
+      // if((faces[0].keypoints[145].y)-(faces[0].keypoints[159].y) < 2.5){
+      //   view.eyeLOpen = 0; //右眼閉
+      // }
+      // else{
+      //   view.eyeLOpen = 1; //右眼開
+      // }
+      // if((faces[0].keypoints[374].y)-(faces[0].keypoints[386].y) < 2.5){
+      //   view.eyeROpen = 0;
+      // }
+      // else{
+      //   view.eyeROpen = 1;
+      // }
+      view.eyeLOpen = 1; //右眼開
+      view.eyeROpen = 1;
       /*嘴巴控制*/
       if((faces[0].keypoints[14].y)-(faces[0].keypoints[13].y) > 3){
         view.mouthOpenY = 1; 
